@@ -1,4 +1,4 @@
-Original App Design Project - README Template
+# BUDGET BUDDY - README Template
 ===
 
 # Budget Buddy
@@ -7,11 +7,10 @@ Original App Design Project - README Template
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
-2. [Schema](#Schema)
 
 ## Overview
 ### Description
-- This application will help users budget depending on their individual hobbies and interests when they first create an account. The app will have a bot that users can interact with, which helps to navigate around the app.
+This application will help users budget depending on their individual hobbies and interests when they first create an account. Additionally, users will be able to identify their transactions over a certain period of time. The app will have a bot that users can interact with, which helps to navigate around the app.
 ### App Evaluation
 - **Category:** Finance & ifestyle
 - **Mobile:** Application is Interactive being able to be used on any iOS device
@@ -75,17 +74,97 @@ Original App Design Project - README Template
 
 ## Wireframes
 
-<img src="https://i.imgur.com/g17Nwvn.png" width=600>
+<img src="https://i.imgur.com/ExyuTkF.jpg" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
 
-### [BONUS] Interactive Prototype
 
-## Schema 
-[This section will be completed in Unit 9]
-### Models
-[Add table of models]
-### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+## Schema
+
+**Models**
+
+User
+| Property | Type        | Description                                 |
+| -------- | ----------- | ------------------------------------------- |
+| objectID | String      | Unique ID for the User for the database     |
+| username | String      | Nickname for the User                       |
+| password | String      | Password used for authentication            |
+| bank     | JSON Object | Bank connected to access data               |
+| image    | File        | Profile Picture
+
+Posts
+
+| Property     | Type        | Description                                |
+| -----------  | ----------- | ------------------------------------------ |
+| purchaseDate | DateTime    | Date of items purchased                    |
+| amountSpent | Number      | Amount Spent                               |
+| amountSaved | Number      | Amount Saved                               |
+| description  | String      | Description of the item that was bought    |
+
+
+### 4. Parse Network Requests
+
+**Analytics Screen** 
+* (Read/GET) Query logged from Bank JSON Object
+```
+let query = PFQuery(className:"accounts")
+
+query.whereKey("account_id", equalTo: currentUser)
+query.findObjectsInBackground { (metadata: [PFObject]?, error: Error?) in
+   if let error = error { 
+      print(error.localizedDescription)
+   } else onSuccess  {
+       fetch('//yourserver.com/get_access_token', {
+      method: 'POST',
+      body: {
+        public_token: public_token,
+        accounts: metadata.accounts,
+        institution: metadata.institution,
+        link_session_id: metadata.link_session_id,
+      },
+    });
+   }
+}
+```
+
+**Feed Screen**
+* (Read/GET) Create new transaction post
+```
+let query = PFQuery(className:"Post")
+query.whereKey("author", equalTo: currentUser)
+query.order(byDescending: "createdAt")
+query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+   if let error = error { 
+      print(error.localizedDescription)
+   } else if let posts = posts {
+      print("Successfully retrieved \(posts.count) posts.")
+   }
+}
+```
+* (Delete) Delete existing Transaction
+* (Create/POST) Create a new post object
+
+**Login Screen** 
+* (Create/POST) Create a new session for the user after login
+
+**Settings Screen** 
+* (Read/GET) Query logged in user object 
+* (Update/PUT) Update user profile image
+* (Update/PUT) Update UI light and dark mode
+
+## [OPTIONAL:] Existing API Endpoints
+
+Plaid
+* Base Url - https://plaid.com/docs/api/
+
+| HTTP Verb | Endpoint  | Description |
+| --------- | --------  | ----------- |
+| GET       | /auth/get | Retrieve and verify bank account information |
+| GET       | /transactions/get | Retreive 24 hours worht of transactions data |
+| GET       | /accounts/get | Retreive Account Information |
+| GET       | /item/get | Get user Data
+| GET       | /institutions/get | Retrieve Supported Data by Institution |
+
+
+Back4App
+* Base Url - https://dashboard.back4app.com/apidocs
+
