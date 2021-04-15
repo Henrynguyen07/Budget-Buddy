@@ -1,7 +1,4 @@
-# BUDGET BUDDY - README Template
-===
-
-# Budget Buddy
+# BUDGET BUDDY 
 
 ## Table of Contents
 1. [Overview](#Overview)
