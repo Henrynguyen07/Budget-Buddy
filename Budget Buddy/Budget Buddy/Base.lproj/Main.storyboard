@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tips-->
-        <scene sceneID="vEE-0h-23M">
-            <objects>
-                <viewController title="Tips" id="RMT-JH-LKk" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0JH-NV-GeE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="bjp-WC-wvi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Tips" id="4Fe-3P-zFQ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nd7-m0-fYX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1391" y="676"/>
-        </scene>
         <!--Analytics-->
         <scene sceneID="StK-Nt-bdX">
             <objects>
@@ -40,6 +24,35 @@
             </objects>
             <point key="canvasLocation" x="-2842" y="677"/>
         </scene>
+        <!--Feed-->
+        <scene sceneID="CXP-j3-9k7">
+            <objects>
+                <tableViewController title="Feed" id="vHM-S8-Nve" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WYk-py-vtj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CbC-0o-7BL">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CbC-0o-7BL" id="HGc-Ko-VJ7">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vHM-S8-Nve" id="IjD-OF-8sF"/>
+                            <outlet property="delegate" destination="vHM-S8-Nve" id="7ie-xp-KQ3"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="cpf-SW-kfp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4UT-tZ-V1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2116" y="675"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gdc-qk-R64">
             <objects>
@@ -51,9 +64,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYV-Qj-zTs" kind="relationship" relationship="viewControllers" id="T0a-ky-1Ao"/>
-                        <segue destination="RMT-JH-LKk" kind="relationship" relationship="viewControllers" id="lnH-dF-cDh"/>
                         <segue destination="adN-3q-ZO2" kind="relationship" relationship="viewControllers" id="j5y-WM-IZa"/>
                         <segue destination="aPv-sr-l45" kind="relationship" relationship="viewControllers" id="jqd-xK-641"/>
+                        <segue destination="vHM-S8-Nve" kind="relationship" relationship="viewControllers" id="w3O-KP-4ts"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcN-ux-qHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -131,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="-2399" y="-62"/>
         </scene>
-        <!--Feed-->
+        <!--Tips-->
         <scene sceneID="O7T-ZJ-rvj">
             <objects>
-                <viewController title="Feed" id="adN-3q-ZO2" sceneMemberID="viewController">
+                <viewController title="Tips" id="adN-3q-ZO2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aQ6-zf-NQd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOH-Bl-3mU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2070" y="676"/>
+            <point key="canvasLocation" x="-1380" y="676"/>
         </scene>
         <!--Settings-->
         <scene sceneID="z9k-xb-54B">
