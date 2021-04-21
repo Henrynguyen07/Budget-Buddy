@@ -166,4 +166,4 @@ Back4App
 * Base Url - https://dashboard.back4app.com/apidocs
 
 ### App Walkthrough GIF
-<img src="http://g.recordit.co/r1scpg0mAR.gif" width=250><br>
+<img src="http://g.recordit.co/3bdjlbIQeQ.gif" width=250><br>
