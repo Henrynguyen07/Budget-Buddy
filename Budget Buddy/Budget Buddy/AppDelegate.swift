@@ -5,9 +5,7 @@
 //  Created by Henry Nguyen on 4/21/21.
 //
 import Parse
-
 import UIKit
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
