@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		50A4FD03DC34F7B285D2358B /* Pods_Budget_BuddyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E268F1BC344247CF1E86E9CC /* Pods_Budget_BuddyTests.framework */; };
+		A28433F92630E1B8001F7583 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28433F82630E1B8001F7583 /* AnalyticsViewController.swift */; };
+		A28433FE2630E22F001F7583 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28433FD2630E22F001F7583 /* FeedViewController.swift */; };
 		B99A4BE7B1398C87668919AB /* Pods_Budget_Buddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF3AE371ACDBA28B9A955E9 /* Pods_Budget_Buddy.framework */; };
 		BA6957CD2630B6F30064E5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6957CC2630B6F30064E5E4 /* AppDelegate.swift */; };
 		BA6957CF2630B6F30064E5E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6957CE2630B6F30064E5E4 /* SceneDelegate.swift */; };
@@ -44,6 +46,8 @@
 		6752933B8488AC3F616B8EC5 /* Pods-Budget Buddy-Budget BuddyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget Buddy-Budget BuddyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Budget Buddy-Budget BuddyUITests/Pods-Budget Buddy-Budget BuddyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7ACEE0099F93DD3BBD5D6AE3 /* Pods-Budget BuddyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget BuddyTests.debug.xcconfig"; path = "Target Support Files/Pods-Budget BuddyTests/Pods-Budget BuddyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A13A3D36B4056ECFD9D82F42 /* Pods-Budget Buddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget Buddy.debug.xcconfig"; path = "Target Support Files/Pods-Budget Buddy/Pods-Budget Buddy.debug.xcconfig"; sourceTree = "<group>"; };
+		A28433F82630E1B8001F7583 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
+		A28433FD2630E22F001F7583 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		BA6957C92630B6F30064E5E4 /* Budget Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6957CC2630B6F30064E5E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6957CE2630B6F30064E5E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				BA6957D72630B6F40064E5E4 /* LaunchScreen.storyboard */,
 				BA6957DA2630B6F40064E5E4 /* Info.plist */,
 				D44D174A2630CC0C00AB77F6 /* LoginViewController.swift */,
+				A28433F82630E1B8001F7583 /* AnalyticsViewController.swift */,
+				A28433FD2630E22F001F7583 /* FeedViewController.swift */,
 			);
 			path = "Budget Buddy";
 			sourceTree = "<group>";
@@ -408,7 +414,9 @@
 			files = (
 				D44D174B2630CC0C00AB77F6 /* LoginViewController.swift in Sources */,
 				BA6957CD2630B6F30064E5E4 /* AppDelegate.swift in Sources */,
+				A28433FE2630E22F001F7583 /* FeedViewController.swift in Sources */,
 				BA6957CF2630B6F30064E5E4 /* SceneDelegate.swift in Sources */,
+				A28433F92630E1B8001F7583 /* AnalyticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
