@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,13 +11,13 @@
 		B99A4BE7B1398C87668919AB /* Pods_Budget_Buddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF3AE371ACDBA28B9A955E9 /* Pods_Budget_Buddy.framework */; };
 		BA6957CD2630B6F30064E5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6957CC2630B6F30064E5E4 /* AppDelegate.swift */; };
 		BA6957CF2630B6F30064E5E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6957CE2630B6F30064E5E4 /* SceneDelegate.swift */; };
-		BA6957D12630B6F30064E5E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6957D02630B6F30064E5E4 /* ViewController.swift */; };
 		BA6957D42630B6F30064E5E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6957D22630B6F30064E5E4 /* Main.storyboard */; };
 		BA6957D62630B6F40064E5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6957D52630B6F40064E5E4 /* Assets.xcassets */; };
 		BA6957D92630B6F40064E5E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6957D72630B6F40064E5E4 /* LaunchScreen.storyboard */; };
 		BA6957E42630B6F40064E5E4 /* Budget_BuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6957E32630B6F40064E5E4 /* Budget_BuddyTests.swift */; };
 		BA6957EF2630B6F40064E5E4 /* Budget_BuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6957EE2630B6F40064E5E4 /* Budget_BuddyUITests.swift */; };
 		C2085771362D4938D23F081E /* Pods_Budget_Buddy_Budget_BuddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53079ECBA644BE914C38AE49 /* Pods_Budget_Buddy_Budget_BuddyUITests.framework */; };
+		D44D174B2630CC0C00AB77F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D174A2630CC0C00AB77F6 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		BA6957C92630B6F30064E5E4 /* Budget Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6957CC2630B6F30064E5E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6957CE2630B6F30064E5E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BA6957D02630B6F30064E5E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BA6957D32630B6F30064E5E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA6957D52630B6F40064E5E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA6957D82630B6F40064E5E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		BA6957EE2630B6F40064E5E4 /* Budget_BuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget_BuddyUITests.swift; sourceTree = "<group>"; };
 		BA6957F02630B6F40064E5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB0BEDE3B0EF87E9EDF1B41E /* Pods-Budget Buddy-Budget BuddyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget Buddy-Budget BuddyUITests.release.xcconfig"; path = "Target Support Files/Pods-Budget Buddy-Budget BuddyUITests/Pods-Budget Buddy-Budget BuddyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D44D174A2630CC0C00AB77F6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E268F1BC344247CF1E86E9CC /* Pods_Budget_BuddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_BuddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF3AE371ACDBA28B9A955E9 /* Pods_Budget_Buddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_Buddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,7 +101,6 @@
 				7ACEE0099F93DD3BBD5D6AE3 /* Pods-Budget BuddyTests.debug.xcconfig */,
 				400952901BC25CF78A39FD94 /* Pods-Budget BuddyTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,11 +141,11 @@
 			children = (
 				BA6957CC2630B6F30064E5E4 /* AppDelegate.swift */,
 				BA6957CE2630B6F30064E5E4 /* SceneDelegate.swift */,
-				BA6957D02630B6F30064E5E4 /* ViewController.swift */,
 				BA6957D22630B6F30064E5E4 /* Main.storyboard */,
 				BA6957D52630B6F40064E5E4 /* Assets.xcassets */,
 				BA6957D72630B6F40064E5E4 /* LaunchScreen.storyboard */,
 				BA6957DA2630B6F40064E5E4 /* Info.plist */,
+				D44D174A2630CC0C00AB77F6 /* LoginViewController.swift */,
 			);
 			path = "Budget Buddy";
 			sourceTree = "<group>";
@@ -407,7 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA6957D12630B6F30064E5E4 /* ViewController.swift in Sources */,
+				D44D174B2630CC0C00AB77F6 /* LoginViewController.swift in Sources */,
 				BA6957CD2630B6F30064E5E4 /* AppDelegate.swift in Sources */,
 				BA6957CF2630B6F30064E5E4 /* SceneDelegate.swift in Sources */,
 			);
