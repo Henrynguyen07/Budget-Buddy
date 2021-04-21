@@ -22,17 +22,17 @@ This application will help users budget depending on their individual hobbies an
 
 **Required Must-have Stories**
 
-* User sees an app icon on the home screen and a styled launch screen.
-* User can create a new account
-* User can login
-* User can input new expenses
+- [X] User sees an app icon on the home screen and a styled launch screen.
+- [X] User can create a new account
+- [X] User can login
+- [X] User can input new expenses
 
 
 **Optional Nice-to-have Stories**
 
-* User can view the app on various device sizes and orientations.
-* User can run Budget Buddy on a real device.
-* User can have morning reports of their spendings yesterday.
+- [X] User can view the app on various device sizes and orientations.
+- [X] User can run Budget Buddy on a real device.
+- [X] User can have morning reports of their spendings yesterday.
 
 ### 2. Screen Archetypes
 
