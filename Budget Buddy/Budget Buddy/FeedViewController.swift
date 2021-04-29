@@ -16,6 +16,13 @@ class FeedViewController: UIViewController {
     }
     
 
+    class ViewController: UIViewController {
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            overrideUserInterfaceStyle = .dark
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

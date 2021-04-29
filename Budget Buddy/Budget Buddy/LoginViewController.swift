@@ -20,6 +20,14 @@ class LoginViewController: UIViewController {
     }
     
 
+    class ViewController: UIViewController {
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            overrideUserInterfaceStyle = .dark
+        }
+    }
+    
+    
     @IBAction func onLogin(_ sender: Any) {
         let username = usernameField.text!
         let password = passwordField.text!

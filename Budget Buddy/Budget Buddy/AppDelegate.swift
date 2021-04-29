@@ -10,6 +10,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    class ViewController: UIViewController {
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            overrideUserInterfaceStyle = .dark
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let parseConfig = ParseClientConfiguration {

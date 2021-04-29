@@ -1,13 +1,13 @@
 //
-//  AnalyticsViewController.swift
+//  SettingsViewController.swift
 //  Budget Buddy
 //
-//  Created by Haimid Alrobaye on 4/21/21.
+//  Created by Haimid Alrobaye on 4/28/21.
 //
 
 import UIKit
 
-class AnalyticsViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,13 +15,15 @@ class AnalyticsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    class ViewController: UIViewController {
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            overrideUserInterfaceStyle = .dark
+    
+    @IBAction func darkMode(_ sender: Any) {
+                super.viewDidLoad()
+                overrideUserInterfaceStyle = .dark
+        UIApplication.shared.windows.forEach { window in
+            window.overrideUserInterfaceStyle = .dark
+            
         }
     }
-
     /*
     // MARK: - Navigation
 
