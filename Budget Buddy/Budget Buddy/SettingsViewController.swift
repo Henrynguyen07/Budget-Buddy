@@ -17,12 +17,17 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func darkMode(_ sender: Any) {
-                super.viewDidLoad()
-                overrideUserInterfaceStyle = .dark
-        UIApplication.shared.windows.forEach { window in
-            window.overrideUserInterfaceStyle = .dark
-            
+        super.viewDidLoad()
+        if self.traitCollection.userInterfaceStyle == .light {
+            UIApplication.shared.windows.forEach { window in
+                window.overrideUserInterfaceStyle = .dark
+            }
+        } else {
+            UIApplication.shared.windows.forEach { window in
+                window.overrideUserInterfaceStyle = .light
+            }
         }
+        
     }
     /*
     // MARK: - Navigation
