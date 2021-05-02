@@ -110,7 +110,7 @@
                             <constraint firstItem="1gS-1H-axG" firstAttribute="leading" secondItem="32c-JH-2md" secondAttribute="leading" id="z5r-10-RLS"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Analytics" id="rhg-Ei-A2K"/>
+                    <tabBarItem key="tabBarItem" title="Analytics" image="network" catalog="system" id="rhg-Ei-A2K"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNK-Ix-fwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +196,7 @@
                             <outlet property="delegate" destination="vHM-S8-Nve" id="7ie-xp-KQ3"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Feed" id="cpf-SW-kfp"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="list.dash" catalog="system" id="cpf-SW-kfp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UT-tZ-V1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,7 +212,7 @@
                         <viewLayoutGuide key="safeArea" id="ln1-9V-chB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tips" id="smv-hV-jRx"/>
+                    <tabBarItem key="tabBarItem" title="Tips" image="ear.badge.checkmark" catalog="system" id="smv-hV-jRx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QG6-uf-EaC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,36 +225,14 @@
                     <view key="view" contentMode="scaleToFill" id="Tfb-jN-YHg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4KE-yQ-baw" userLabel="darkMode">
-                                <rect key="frame" x="97" y="505" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
-                                <connections>
-                                    <action selector="darkMode:" destination="OzZ-ja-DQr" eventType="valueChanged" id="SZL-X0-SLD"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark Appearance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKx-tc-cBq">
-                                <rect key="frame" x="97" y="476" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAA-yO-vfW">
-                                <rect key="frame" x="155" y="126" width="104" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Connect"/>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8hE-oO-cN0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="CPP-XW-Vbs"/>
+                    <navigationItem key="navigationItem" title="Settings" id="oQ0-2r-SuN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFj-14-Q3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-420.28985507246381" y="675"/>
+            <point key="canvasLocation" x="489.85507246376818" y="675"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gdc-qk-R64">
@@ -269,7 +247,7 @@
                         <segue destination="BYV-Qj-zTs" kind="relationship" relationship="viewControllers" id="T0a-ky-1Ao"/>
                         <segue destination="vHM-S8-Nve" kind="relationship" relationship="viewControllers" id="w3O-KP-4ts"/>
                         <segue destination="D8p-Gu-ibE" kind="relationship" relationship="viewControllers" id="LMG-PS-Koq"/>
-                        <segue destination="OzZ-ja-DQr" kind="relationship" relationship="viewControllers" id="QTe-3y-9RX"/>
+                        <segue destination="Biz-aE-GGC" kind="relationship" relationship="viewControllers" id="QTe-3y-9RX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcN-ux-qHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -347,8 +325,40 @@
             </objects>
             <point key="canvasLocation" x="-2843" y="-137"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="0cC-Q9-aGc">
+            <objects>
+                <navigationController title="Settings" automaticallyAdjustsScrollViewInsets="NO" id="Biz-aE-GGC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.2.fill" catalog="system" selectedImage="gearshape.2.fill" id="CPP-XW-Vbs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zcd-Uz-rdd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OzZ-ja-DQr" kind="relationship" relationship="rootViewController" id="YOI-t0-fQi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="63J-Mq-D8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420.28985507246381" y="675"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ear.badge.checkmark" catalog="system" width="112" height="128"/>
+        <image name="gearshape.2.fill" catalog="system" width="128" height="100"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="network" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
