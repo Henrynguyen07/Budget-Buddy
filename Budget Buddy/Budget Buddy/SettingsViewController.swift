@@ -42,23 +42,21 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     var models = [Section]()
     override func viewDidLoad() {
         super.viewDidLoad()
-       configure()
+        configure()
         title = "Settings"
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame =  view.bounds
-        // Do any additional setup after loading the view.
     }
     
     func configure() {
         models.append(Section(title: "Appearance", options: [
-                                .switchcell(model: SettingsSwitchOption(title: "Dark Mode", icon: UIImage(systemName: "eyes"), iconBackgroundColor: .systemPink, handler:{
-                
-        
+                                .switchcell(model: SettingsSwitchOption(title: "Dark Mode", icon: UIImage(systemName: "eyes"), iconBackgroundColor: .systemPink, handler: {
+                                    
                                 }, isOn: true)),
-        ]))
-    
+           
+                                ]))
         models.append(Section(title: "General", options: [
             .staticcell(model: SettingsOption(title: "Edit Profile", icon: UIImage(systemName: "figure.wave"), iconBackgroundColor: .systemPink) {
                 self.performSegue(withIdentifier: "LinkBank", sender: nil)
@@ -117,8 +115,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.configure(with: model)
         return cell
         case .switchcell(model: let model):
+            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier, for: indexPath) as? SwitchTableViewCell else{
+                
                 return UITableViewCell()
+            
             }
             cell.configure(with: model)
             return cell
@@ -135,19 +136,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-//    @IBAction func darkMode(_ sender: Any) {
-//        super.viewDidLoad()
-//        if self.traitCollection.userInterfaceStyle == .light {
-//            UIApplication.shared.windows.forEach { window in
-//                window.overrideUserInterfaceStyle = .dark
-//            }
-//        } else {
-//            UIApplication.shared.windows.forEach { window in
-//                window.overrideUserInterfaceStyle = .light
-//            }
-//        }
-//
-//    }
     /*
     // MARK: - Navigation
 

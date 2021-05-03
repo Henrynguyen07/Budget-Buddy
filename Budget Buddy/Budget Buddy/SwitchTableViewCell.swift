@@ -67,6 +67,7 @@ class SwitchTableViewCell: UITableViewCell {
         label.text = nil
         iconContainer.backgroundColor = nil
         myswitch.isOn = false
+       
     }
     
     public func configure(with model: SettingsSwitchOption){
