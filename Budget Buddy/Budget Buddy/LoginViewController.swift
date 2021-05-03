@@ -26,6 +26,12 @@ class LoginViewController: UIViewController {
             overrideUserInterfaceStyle = .dark
         }
     }
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "LoggedIn") == true{
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+        }
+        
+    }
     
     
     @IBAction func onLogin(_ sender: Any) {
@@ -33,6 +39,7 @@ class LoginViewController: UIViewController {
         let password = passwordField.text!
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if (user != nil){
+                UserDefaults.standard.setValue(true, forKey: "LoggedIn")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
             print("Error: \(String(describing: error?.localizedDescription))")

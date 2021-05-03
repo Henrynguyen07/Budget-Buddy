@@ -229,10 +229,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="oQ0-2r-SuN"/>
+                    <connections>
+                        <segue destination="atb-tU-gmY" kind="show" identifier="LinkBank" id="P5a-Vv-nxV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFj-14-Q3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489.85507246376818" y="675"/>
+            <point key="canvasLocation" x="472" y="647"/>
+        </scene>
+        <!--Link Bank View Controller-->
+        <scene sceneID="zBR-my-12A">
+            <objects>
+                <viewController id="atb-tU-gmY" customClass="LinkBankViewController" customModule="Budget_Buddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t1f-IC-DQW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LMj-pb-1jV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UKV-G6-XD7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vzb-IQ-iXZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781" y="335"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gdc-qk-R64">

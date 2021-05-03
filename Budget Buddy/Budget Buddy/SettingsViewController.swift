@@ -40,48 +40,40 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func configure(){
         models.append(Section(title: "General", options: [
-            SettingsOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink) {
-                print("tapped first cell")
+            SettingsOption(title: "Edit Profile", icon: UIImage(systemName: "figure.wave"), iconBackgroundColor: .systemPink) {
+                self.performSegue(withIdentifier: "LinkBank", sender: nil)
             },
-            SettingsOption(title: "Bluetooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .systemPink){
+            SettingsOption(title: "Link Your Bank", icon: UIImage(systemName: "link.badge.plus"), iconBackgroundColor: .systemPink){
                 
             },
-            SettingsOption(title: "Airplane Mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemPink){
-                
-            },
-            SettingsOption(title: "iCloud", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemPink){
+            SettingsOption(title: "Notifications", icon: UIImage(systemName: "iphone.radiowaves.left.and.right"), iconBackgroundColor: .systemPink){
                 
             }
         ]))
         models.append(Section(title: "Information", options: [
-            SettingsOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink) {
+            SettingsOption(title: "Privacy", icon: UIImage(systemName: "person.icloud"), iconBackgroundColor: .systemPink) {
                 
             },
-            SettingsOption(title: "Bluetooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .systemPink){
+            SettingsOption(title: "Security", icon: UIImage(systemName: "lock.icloud"), iconBackgroundColor: .systemPink){
                 
             },
-            SettingsOption(title: "Airplane Mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemPink){
+            SettingsOption(title: "Help", icon: UIImage(systemName: "arrow.up.message"), iconBackgroundColor: .systemPink){
                 
             },
-            SettingsOption(title: "iCloud", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemPink){
+            SettingsOption(title: "About", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemPink){
                 
             }
         ]))
-        models.append(Section(title: "Apps", options: [
-            SettingsOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink) {
+        models.append(Section(title: "Account", options: [
+            SettingsOption(title: "Sign In Preferences", icon: UIImage(systemName: "key.icloud"), iconBackgroundColor: .systemPink){
                 
             },
-            SettingsOption(title: "Bluetooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .systemPink){
-                
-            },
-            SettingsOption(title: "Airplane Mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemPink){
-                
-            },
-            SettingsOption(title: "iCloud", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemPink){
-                
-            }
+        SettingsOption(title: "Logout", icon: UIImage(systemName: "iphone.slash"), iconBackgroundColor: .systemPink){
+            self.dismiss(animated: true, completion: nil)
+            UserDefaults.standard.setValue(false, forKey: "LoggedIn")
+                                    
+                                }
         ]))
-                
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let model = models[section]

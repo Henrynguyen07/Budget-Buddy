@@ -21,6 +21,7 @@
 		BA6957EF2630B6F40064E5E4 /* Budget_BuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6957EE2630B6F40064E5E4 /* Budget_BuddyUITests.swift */; };
 		C2085771362D4938D23F081E /* Pods_Budget_Buddy_Budget_BuddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53079ECBA644BE914C38AE49 /* Pods_Budget_Buddy_Budget_BuddyUITests.framework */; };
 		D44D174B2630CC0C00AB77F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D174A2630CC0C00AB77F6 /* LoginViewController.swift */; };
+		D456C47F264077EA0005C163 /* LinkBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456C47E264077EA0005C163 /* LinkBankViewController.swift */; };
 		D4C1EC31263DE1CA0088D252 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1EC30263DE1CA0088D252 /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		BA6957F02630B6F40064E5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB0BEDE3B0EF87E9EDF1B41E /* Pods-Budget Buddy-Budget BuddyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget Buddy-Budget BuddyUITests.release.xcconfig"; path = "Target Support Files/Pods-Budget Buddy-Budget BuddyUITests/Pods-Budget Buddy-Budget BuddyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D44D174A2630CC0C00AB77F6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D456C47E264077EA0005C163 /* LinkBankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBankViewController.swift; sourceTree = "<group>"; };
 		D4C1EC30263DE1CA0088D252 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		E268F1BC344247CF1E86E9CC /* Pods_Budget_BuddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_BuddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF3AE371ACDBA28B9A955E9 /* Pods_Budget_Buddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_Buddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				A28433FD2630E22F001F7583 /* FeedViewController.swift */,
 				A2056F5C263A3D6C00C6F321 /* SettingsViewController.swift */,
 				D4C1EC30263DE1CA0088D252 /* SettingTableViewCell.swift */,
+				D456C47E264077EA0005C163 /* LinkBankViewController.swift */,
 			);
 			path = "Budget Buddy";
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D456C47F264077EA0005C163 /* LinkBankViewController.swift in Sources */,
 				D44D174B2630CC0C00AB77F6 /* LoginViewController.swift in Sources */,
 				BA6957CD2630B6F30064E5E4 /* AppDelegate.swift in Sources */,
 				D4C1EC31263DE1CA0088D252 /* SettingTableViewCell.swift in Sources */,
