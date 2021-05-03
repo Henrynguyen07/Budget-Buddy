@@ -2,13 +2,13 @@
 //  SwitchTableViewCell.swift
 //  Budget Buddy
 //
-//  Created by Jose Lopez on 5/1/21.
+//  Created by Jose Lopez on 5/3/21.
 //
 
 import UIKit
-
+ 
 class SwitchTableViewCell: UITableViewCell {
-
+ 
   static let identifier = "SwitchTableViewCell"
     private let iconContainer: UIView = {
         let view = UIView()
@@ -75,5 +75,4 @@ class SwitchTableViewCell: UITableViewCell {
         iconContainer.backgroundColor = model.iconBackgroundColor
         myswitch.isOn = model.isOn
     }
-
 }

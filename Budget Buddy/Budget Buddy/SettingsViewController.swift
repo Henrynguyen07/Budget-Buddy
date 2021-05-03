@@ -8,7 +8,19 @@
 import UIKit
 struct Section {
     let title: String
-    let options: [SettingsOption]
+    let options: [SettingsOptionType]
+}
+enum SettingsOptionType {
+    case switchcell(model: SettingsSwitchOption)
+    case staticcell(model: SettingsOption)
+}
+
+struct SettingsSwitchOption {
+    let title: String
+    let icon: UIImage?
+    let iconBackgroundColor: UIColor
+    let handler: (() -> Void)
+    var isOn: Bool
 }
 struct SettingsOption {
     let title: String
@@ -23,13 +35,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     private let tableView : UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
+        table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.identifier)
         return table
     }()
     
     var models = [Section]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+       configure()
         title = "Settings"
         view.addSubview(tableView)
         tableView.delegate = self
@@ -38,41 +51,48 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
     }
     
-    func configure(){
+    func configure() {
+        models.append(Section(title: "Appearance", options: [
+                                .switchcell(model: SettingsSwitchOption(title: "Dark Mode", icon: UIImage(systemName: "eyes"), iconBackgroundColor: .systemPink, handler:{
+                
+        
+                                }, isOn: true)),
+        ]))
+    
         models.append(Section(title: "General", options: [
-            SettingsOption(title: "Edit Profile", icon: UIImage(systemName: "figure.wave"), iconBackgroundColor: .systemPink) {
+            .staticcell(model: SettingsOption(title: "Edit Profile", icon: UIImage(systemName: "figure.wave"), iconBackgroundColor: .systemPink) {
                 self.performSegue(withIdentifier: "LinkBank", sender: nil)
-            },
-            SettingsOption(title: "Link Your Bank", icon: UIImage(systemName: "link.badge.plus"), iconBackgroundColor: .systemPink){
+            }),
+            .staticcell(model: SettingsOption(title: "Link Your Bank", icon: UIImage(systemName: "link.badge.plus"), iconBackgroundColor: .systemPink){
                 
-            },
-            SettingsOption(title: "Notifications", icon: UIImage(systemName: "iphone.radiowaves.left.and.right"), iconBackgroundColor: .systemPink){
+            }),
+            .staticcell(model: SettingsOption(title: "Notifications", icon: UIImage(systemName: "iphone.radiowaves.left.and.right"), iconBackgroundColor: .systemPink){
                 
-            }
+            })
         ]))
         models.append(Section(title: "Information", options: [
-            SettingsOption(title: "Privacy", icon: UIImage(systemName: "person.icloud"), iconBackgroundColor: .systemPink) {
+                                .staticcell(model: SettingsOption(title: "Privacy", icon: UIImage(systemName: "person.icloud"), iconBackgroundColor: .systemPink) {
                 
-            },
-            SettingsOption(title: "Security", icon: UIImage(systemName: "lock.icloud"), iconBackgroundColor: .systemPink){
+            }),
+                                .staticcell(model: SettingsOption(title: "Security", icon: UIImage(systemName: "lock.icloud"), iconBackgroundColor: .systemPink){
                 
-            },
-            SettingsOption(title: "Help", icon: UIImage(systemName: "arrow.up.message"), iconBackgroundColor: .systemPink){
+            }),
+                                .staticcell(model: SettingsOption(title: "Help", icon: UIImage(systemName: "arrow.up.message"), iconBackgroundColor: .systemPink){
                 
-            },
-            SettingsOption(title: "About", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemPink){
+            }),
+                                .staticcell(model: SettingsOption(title: "About", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemPink){
                 
-            }
+            })
         ]))
         models.append(Section(title: "Account", options: [
-            SettingsOption(title: "Sign In Preferences", icon: UIImage(systemName: "key.icloud"), iconBackgroundColor: .systemPink){
+                                .staticcell(model: SettingsOption(title: "Sign In Preferences", icon: UIImage(systemName: "key.icloud"), iconBackgroundColor: .systemPink){
                 
-            },
-        SettingsOption(title: "Logout", icon: UIImage(systemName: "iphone.slash"), iconBackgroundColor: .systemPink){
+            }),
+                                .staticcell(model: SettingsOption(title: "Logout", icon: UIImage(systemName: "iphone.slash"), iconBackgroundColor: .systemPink){
             self.dismiss(animated: true, completion: nil)
             UserDefaults.standard.setValue(false, forKey: "LoggedIn")
                                     
-                                }
+                                })
         ]))
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -89,31 +109,45 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.section].options[indexPath.row]
+        switch model.self{
+        case .staticcell(let model):
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else{
             return UITableViewCell()
         }
         cell.configure(with: model)
         return cell
-    }
+        case .switchcell(model: let model):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier, for: indexPath) as? SwitchTableViewCell else{
+                return UITableViewCell()
+            }
+            cell.configure(with: model)
+            return cell
+        }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let model = models[indexPath.section].options[indexPath.row]
-        model.handler()
-    }
-    @IBAction func darkMode(_ sender: Any) {
-        super.viewDidLoad()
-        if self.traitCollection.userInterfaceStyle == .light {
-            UIApplication.shared.windows.forEach { window in
-                window.overrideUserInterfaceStyle = .dark
-            }
-        } else {
-            UIApplication.shared.windows.forEach { window in
-                window.overrideUserInterfaceStyle = .light
-            }
+        let type = models[indexPath.section].options[indexPath.row]
+        switch type.self {
+        case .staticcell(let model):
+            model.handler()
+        case .switchcell(let model):
+            model.handler()
         }
-        
     }
+    
+//    @IBAction func darkMode(_ sender: Any) {
+//        super.viewDidLoad()
+//        if self.traitCollection.userInterfaceStyle == .light {
+//            UIApplication.shared.windows.forEach { window in
+//                window.overrideUserInterfaceStyle = .dark
+//            }
+//        } else {
+//            UIApplication.shared.windows.forEach { window in
+//                window.overrideUserInterfaceStyle = .light
+//            }
+//        }
+//
+//    }
     /*
     // MARK: - Navigation
 
@@ -123,5 +157,5 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         // Pass the selected object to the new view controller.
     }
     */
-
+    }
 }
