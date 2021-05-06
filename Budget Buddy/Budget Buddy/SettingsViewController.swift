@@ -116,7 +116,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
         case .switchcell(model: let model):
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier, for: indexPath) as? SwitchTableViewCell else{
+           guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier, for: indexPath) as? SwitchTableViewCell else{
                 
                 return UITableViewCell()
             
