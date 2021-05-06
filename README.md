@@ -168,3 +168,4 @@ Back4App
 ### App Walkthrough GIF
 <img src="http://g.recordit.co/3bdjlbIQeQ.gif" width=250><br>
 <img src="http://g.recordit.co/3HcMZEM5wk.gif" width=250><br>
+<img src="http://g.recordit.co/HAOlLWuYZL.gif" width=250><br>
