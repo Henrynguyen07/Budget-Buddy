@@ -30,7 +30,12 @@ struct SettingsOption {
 }
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        return UITableViewCell()
+        
+    }
+    
     
     private let tableView : UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -105,7 +110,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return models[section].options.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+ /*   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.section].options[indexPath.row]
         switch model.self{
         case .staticcell(let model):
@@ -134,7 +139,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         case .switchcell(let model):
             model.handler()
         }
-    }
+    }*/
     
     /*
     // MARK: - Navigation
@@ -146,4 +151,4 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     */
     }
-}
+
